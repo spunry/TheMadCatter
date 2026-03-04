@@ -1,50 +1,93 @@
-# Welcome to your Expo app 👋
+# The Mad Catter 🐾😾
+A cat-clicker game where the more you click the cat, the angrier it gets… until it (maybe) jump-scares you.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This project is being built as a learning game: small features, clear goals, and lots of opportunities to practice real coding skills.
 
-## Get started
+---
 
-1. Install dependencies
+## Game Concept
+- Click the cat to increase its anger.
+- Earn **Mad Points** (the shop currency) as you click.
+- Buy shop items that make the cat get angry faster or generate automatic anger.
+- Rebirth (prestige) up to **5 times** to unlock new shop items and scarier cat looks.
+- A super-angry cat may **jump-scare** you and then reset to happy.
+- Random events pop up (some make the cat angry, some make it happy).
+- Spin a wheel every **15 minutes** for bonuses.
+- Daily login streak rewards.
 
-   ```bash
-   npm install
-   ```
+---
 
-2. Start the app
+## Core Mechanics
 
-   ```bash
-   npx expo start
-   ```
+### Clicking & Currency
+- **Clicks**: basic progress.
+- **Mad Points**: earned from clicking.
+  - Rule: **Every 50 clicks = 1 Mad Point**
 
-In the output, you'll find options to open the app in a
+### Anger Meter
+- Clicking increases anger.
+- Some items/events increase anger faster.
+- Some events/items reduce anger (happy boosts).
+- If the anger reaches a high threshold, there’s a chance to trigger a **jump-scare**, then:
+  - cat becomes happy again
+  - (optional) apply a short cooldown before it can happen again
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### Shop
+Spend **Mad Points** to buy upgrades, such as:
+- “Angry Click” upgrades (more anger per click)
+- Items that auto-increase anger over time (clicks/sec style)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Example items:
+- Dog yoyo
+- Dog that chases the cat around
+- Outfits (extras stored in a dresser)
 
-## Get a fresh project
+### Random Pop-Up Events
+Occasional objects appear on screen.
+- **Anger events**: another cat (cat fight), cucumber
+- **Happy events**: scratching post, cat treat
 
-When you're ready, run:
+### Wheel Spin (every 15 minutes)
+Possible outcomes:
+- More clicks
+- Make the cat angrier
+- Make the cat happier
+- **1%** chance: +1,000,000 clicks
+- **0.5%** chance: +10,000,000,000,000 clicks/sec (10 trillion)
 
-```bash
-npm run reset-project
-```
+### Rebirth (Prestige)
+- You restart progress, but gain a permanent benefit:
+  - the cat stays happy longer
+  - more items unlock in the shop
+  - visuals get scarier each rebirth
+- Limit: **5 total rebirths**
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Save/Load (Persistence)
+The game should continue where you left off:
+- Save clicks, mad points, upgrades, rebirth count, streak, wheel cooldown, etc.
+- Auto-save on key events + on exit.
 
-## Learn more
+---
 
-To learn more about developing your project with Expo, look at the following resources:
+## Suggested Milestones (Great for Learning)
+1. **Prototype clicker**
+   - click counter
+   - basic anger meter
+2. **Mad Points**
+   - earn 1 point per 50 clicks
+   - simple UI display
+3. **Shop v1**
+   - buy an upgrade that increases “anger per click”
+4. **Auto items**
+   - clicks/sec or anger/sec style upgrades
+5. **Random events**
+   - spawn an item occasionally, click it to apply effect
+6. **Wheel spin**
+   - timer + outcome logic + probabilities
+7. **Save system**
+   - load on start, save on changes
+8. **Rebirth**
+   - reset + permanent progression + unlock tiers
+9. **Polish**
+   - animations, sounds, jump-scare, final balancing
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
