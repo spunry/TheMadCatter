@@ -1,7 +1,7 @@
 # The Mad Catter 🐾😾
 A cat-clicker game where the more you click the cat, the angrier it gets… until it (maybe) jump-scares you.
 
-This project is being built as a learning game: small features, clear goals, and lots of opportunities to practice real coding skills.
+This project is being built as a learning game for my son: small features, clear goals, and lots of opportunities to practice real coding skills.
 
 ---
 
